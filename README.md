@@ -2,22 +2,12 @@
 
 A FastAPI-based service that collects and stores HTTP metadata (headers, cookies, page source) for URLs using MongoDB.
 
-## Features
-
-- **POST /collect**: Submit a URL to collect its metadata
-- **GET /metadata**: Retrieve stored metadata or trigger collection if not available
-- Asynchronous metadata collection using background tasks
-- MongoDB storage with automatic indexing
-- Docker Compose setup for easy deployment
-- Comprehensive test suite using pytest
-
 ## Technical Stack
 
 - **Framework**: FastAPI
 - **Database**: MongoDB
 - **Infrastructure**: Docker Compose
 - **HTTP Client**: httpx
-- **Testing**: pytest
 
 ## Prerequisites
 
@@ -30,7 +20,7 @@ A FastAPI-based service that collects and stores HTTP metadata (headers, cookies
 
 1. Clone the repository or navigate to the project directory:
 ```bash
-cd http-metadata-inventory
+ cd -HTTP-metadata
 ```
 
 2. Start the services:
@@ -73,7 +63,7 @@ Collect metadata for a URL.
 ```json
 {
   "url": "https://example.com",
-  "status": "processing",
+  "status": "Url_saved",
   "message": "Metadata collection started"
 }
 ```
@@ -109,26 +99,12 @@ GET /metadata?url=https://example.com
 }
 ```
 
-## Running Tests
-
-### Using Docker
-
-```bash
-docker-compose run api pytest test_main.py -v
-```
-
-### Local
-
-```bash
-pytest test_main.py -v
-```
 
 ## Project Structure
 
 ```
 http-metadata-inventory/
 ├── main.py                 # FastAPI application
-├── test_main.py           # Test suite
 ├── requirements.txt       # Python dependencies
 ├── Dockerfile            # Docker image configuration
 ├── docker-compose.yml    # Docker Compose setup
@@ -166,10 +142,3 @@ To remove volumes as well:
 docker-compose down -v
 ```
 
-## License
-
-MIT
-
-## Author
-
-Created as part of a technical assignment.
