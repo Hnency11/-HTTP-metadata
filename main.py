@@ -117,3 +117,4 @@ async def shutdown_event():
     client.close()
     print("MongoDB connection closed")
 
+
